@@ -1,12 +1,12 @@
-/* *,
+
 *::after,
 *::before{
   box-sizing: border-box;
-} */
+} 
 
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: 'Gilroy-Regular';
   src: local('Gilroy Regular'), local('Gilroy-Regular'),
       url('Gilroy-Regular.woff2') format('woff2'),
       url('Gilroy-Regular.woff') format('woff'),
@@ -32,7 +32,10 @@
   font-weight: 600;
   font-style: normal;
 }
-
+body{
+  width: 1440px;
+height: 1739px;
+}
 
 .top-information{
   width: 100%;
@@ -51,7 +54,7 @@ padding-left: 350px;
 
 .top-infomation__text{
   color: #FFF;
-font-family: Open Sans;
+font-family: 'Open Sans';
 font-size: 28px;
 font-style: normal;
 font-weight: 600;
@@ -60,7 +63,7 @@ padding-top: 10px;
 }
 .top-infomation__text-item{
   color: #FFF;
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-size: 28px;
   font-style: normal;
   font-weight: 600;
@@ -75,6 +78,7 @@ padding-top: 10px;
 .sidebar-block{
   
   width: 301px;
+  height: auto;
 padding: 0;
 flex-direction: column;
 align-items: center;
@@ -83,7 +87,7 @@ background: #eaf7f6;
 
 .sidebar-block__inner{
   width: 300px;
-height: 536px;
+height: 1436px;
 }
 .categores__title{
   display: flex;
@@ -112,7 +116,9 @@ margin-right: 10px;
   list-style: none;
 }
 .section{
-  display: flex;
+  display: grid;
+  grid-template-columns: 301px auto;
+  
 }
 .header{
   width: 100%;
@@ -148,7 +154,11 @@ margin-top: 24px;
   border: none;
   cursor: pointer;
 }
-
+.header__contacts-title{
+  font-family: 'Gilroy-medium';
+  color: #000;
+  text-decoration: none;
+}
 .header__contacts-item{
   font-family: 'Gilroy-medium';
   color: #000;
@@ -201,4 +211,147 @@ border-radius: 8px 0 0 8px;
   text-decoration: none;
   font-style: normal;
   margin-left: 34px;
+}
+.sales{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-right: 32px;
+}
+.sales__title{
+  margin-left: 15px;
+  color: #000;
+font-family: 'Open Sans';
+font-size: 32px;
+font-style: normal;
+line-height: 32px;
+margin-left: 24px;
+}
+.sales__btn{
+  border-radius: 6px;
+background: #007CFF;
+color: #FFF;
+font-family: 'Gilroy-Regular';
+font-size: 16px;
+line-height: 22px;
+width: 187px;
+height: 34px;
+margin-top: 15px;
+
+}
+.sales__btn-img{
+  margin-left: 5px;
+  
+}
+.products{
+  display: flex;
+  column-gap: 5px;
+  margin-left: 24px;
+}
+.products__items{
+width: 270px;
+height: 600px;
+border-radius: 12px;
+border: 1px solid rgba(0, 124, 255, 0.20);
+background: #FFF;
+
+}
+.products__item{
+width: 220px;
+height: 558px;
+flex-shrink: 0;
+margin-left: 25px;
+}
+.products__item-text{
+  color: #000;
+text-align: center;
+font-family: 'Gilroy-Regular';
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; 
+}
+.products__item-info{
+color: #757575;
+font-family: 'Gilroy-Regular';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; 
+text-align: center;
+}
+.products__item-extra{
+  display: flex;
+  justify-content: space-between;
+ 
+
+}
+.products__item-price{
+color: #F14E3A;
+font-family: 'Open Sans';
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+.products__item-image{
+  margin: 18px 0 24px 24px;
+}
+.benefits__title{
+  color: #000;
+font-family: 'Open Sans';
+font-size: 32px;
+font-style: normal;
+line-height: 32px;
+margin-left: 24px;
+margin-top: 31px;
+}
+
+.footer{
+width: 1440px;
+height: 127px;
+flex-shrink: 0;
+margin-top: 70px;
+
+background: rgba(0, 124, 255, 0.05);
+}
+.footer__logo{
+margin-top: 25px;
+display: flex;
+}
+.logo__img-text{
+  color: #000;
+  margin-left: 32px;
+}
+
+.footer__inner{
+  display: flex;
+  justify-content: space-between;
+}
+.footer__menu-inner{
+  margin-top: 36px;
+}
+.footer__menu-line{
+  font-family: 'Gilroy-medium';
+  color: #000;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: 34px;
+}
+.footer__menu-title{
+color: #000;
+font-family: 'Gilroy-Regular';
+font-size: 14px;
+line-height: 18.065px;
+text-decoration-line: underline;
+margin-top: 10px;
+}
+.footer__menu-text{
+  margin-left: 34px;
+}
+.footer__social{
+  margin-top: 74px;
+  margin-right: 26px;
 }
