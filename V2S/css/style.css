@@ -3,24 +3,32 @@
 *::before{
   box-sizing: border-box;
 }
-
-
+html,
+body{
+  height: 100%;
+}
+.wrapper{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 @font-face {
-  font-family: 'Gilroy';
-  src: local('Gilroy Regular'), local('Gilroy-Regular'),
-      url('Gilroy-Regular.woff2') format('woff2'),
-      url('Gilroy-Regular.woff') format('woff'),
-      url('Gilroy-Regular.ttf') format('truetype');
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+      url('../fonts/Roboto-Regular.woff') format('woff'),
+      url('../fonts/Roboto-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
+
+
 @font-face {
-  font-family: 'Gilroy-medium';
-  src: local('Gilroy Medium'), local('Gilroy-Medium'),
-      url('Gilroy-Medium.woff2') format('woff2'),
-      url('Gilroy-Medium.woff') format('woff'),
-      url('Gilroy-Medium.ttf') format('truetype');
+  font-family: 'Roboto';
+  src:
+      url('../fonts/roboto-medium.woff2') format('woff2'),
+      url('../fonts/roboto-medium.woff') format('woff'),
+      url('../fonts/roboto-medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 } 
@@ -35,23 +43,11 @@
 }
 
 
-.popup__contact-input{
-width: 100%;
-min-height: 40px;
-flex-shrink: 0;
-border-radius: 6px;
-border: 1px solid #007CFF;
-text-align: center;
-}
-
 
 
 .top-information{
-
 height: 52px;
-
 background: linear-gradient(135deg, #A1FF8B 0%, #3F93FF 96.83%);
-
 }
 
 .top-information__inner{
@@ -100,7 +96,7 @@ background: #eaf7f6;
 display: flex;
 justify-content: space-between;
 align-items: center;
-font-family: 'Gilroy-medium';
+font-family: 'Roboto';
 color: #000;
 font-size: 14px;
 font-style: normal;
@@ -128,18 +124,86 @@ margin-left: 10px;
 .categores__inner{
   list-style: none;
 }
+
+
+
+
+
+.submenu__title{
+font-family: 'Roboto';
+color: #3F93FF;
+font-size: 14px;
+line-height: 24px;
+margin: 0;
+padding: 0;
+list-style: none;
+margin-top: 15px;
+}
+.submenu__text{
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  color: #000;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+.submenu{
+  display: grid;
+  grid-template-columns: repeat(7, 157px);
+  background-color: #fff;
+  position: absolute;
+  z-index: 5;
+  transform-origin: 0 0;
+  transform: rotateX(-90deg);
+  transition: .3s linear;
+  visibility: hidden;
+  opacity: 0;
+  margin-top: 166px;
+  margin-left: 189px;
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+
+.submenu .submenu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: transform .3s linear;
+}
+.topmenu :hover > .submenu{
+  opacity: 1;
+  visibility: visible;
+  transform: rotateX(0deg);
+}
+
+
+
+
+
+
   .section{
   display: grid;
   grid-template-columns: 210px 1fr;
+  flex-grow: 1;
 }
-.section__header{
-  display: grid;
-  grid-template-columns: 210px 1fr;
-}
+
 
 .header{
 height: 80px;
 }
+.section__header{
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+
 .header__contacts{
   display: flex;
   justify-content: space-between;
@@ -155,7 +219,7 @@ align-items: center;
 }
 .header__contacts-link{
   margin-left: 30px;
-  font-family: 'Gilroy-medium';
+  font-family: 'Roboto';
   color: #000;
   font-style: normal;
   text-decoration: none;
@@ -163,7 +227,7 @@ align-items: center;
   line-height: 24px;
 }
 .header__contacts-btn{
-  font-family: 'Gilroy-medium';
+  font-family: 'Roboto';
   color: #000;
   font-size: 16px;
   line-height: 20px;
@@ -175,7 +239,8 @@ align-items: center;
   font-style: normal;
 }
 .header__contacts-title{
-  font-family: 'Gilroy-medium';
+  display: flex;
+  font-family: 'Roboto';
   font-size: 16px;
   line-height: 24px;
   background: none;
@@ -186,7 +251,8 @@ align-items: center;
   
 
 .header__contacts-item{
-  font-family: 'Gilroy-medium';
+  display: flex;
+  font-family: 'Roboto';
   color: #000;
 margin-right: 32px;
 font-size: 16px;
@@ -213,7 +279,7 @@ font-style: normal;
 }
 
 .header__menu-btn{
-  font-family: 'Gilroy-medium';
+  font-family: 'Roboto';
   font-size: 16px;
   line-height: 20px;
   background-color: #afdcf7;
@@ -223,7 +289,7 @@ font-style: normal;
   margin-right: 30px;
   }
 .headrr__menu-text{
-  font-family: 'Gilroy-medium';
+  font-family: 'Roboto';
   font-size: 16px;
   line-height: 24px;
 padding-top: 5px;
@@ -233,7 +299,7 @@ border-radius: 8px 0 0 8px;
 font-style: normal;
 }
 .headrr__menu-line{
-  font-family: 'Gilroy-medium';
+  font-family: 'Roboto', sans-serif;
   color: #000;
   font-size: 16px;
   line-height: 24px;
@@ -283,6 +349,15 @@ cursor: pointer;
   margin: 20px 30px 0 30px;
 }
 
+.popup__contact-input{
+  width: 100%;
+  min-height: 40px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1px solid #007CFF;
+  text-align: center;
+  }
+
 .popup__contact__form{
   display: grid;
   align-items: center;
@@ -297,7 +372,7 @@ cursor: pointer;
 }
 .popup__title{
   color: #000;
-font-family: 'Open Sans';
+font-family: 'Open Sans' sans-serif;
 font-size: 32px;
 line-height: 32px;
 }
@@ -321,7 +396,7 @@ line-height: 32px;
 }
 .popup__contact-item-btn{
   color: #007CFF;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 22px;
 line-height: 32px;
 margin-top: 37px;
@@ -335,7 +410,7 @@ column-gap: 10px;
 margin-left: 119px;
 }
 .popup__contact__btn1{
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
 font-size: 24px;
 line-height: 32px;
   width: 400px;
@@ -348,7 +423,7 @@ background: #007CFF;
 cursor: pointer;
 }
 .popup__contact__btn2{
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
 font-size: 24px;
 line-height: 32px;
   width: 400px;
@@ -363,20 +438,20 @@ line-height: 32px;
 }
 label{
   color: #000;
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
   font-size: 16px;
     line-height: 32px;
 }
 
 .popup__contact__text{
   color: #000;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 16px;
 line-height: 120%;
 }
 .popup__contact__text-item{
   color: #007CFF;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 16px;
 line-height: 120%;
 text-decoration: none;
@@ -408,7 +483,7 @@ text-decoration: none;
 border-radius: 6px;
 background: #007CFF;
 color: #FFF;
-font-family: 'Gilroy-Regular';
+font-family: 'Roboto';
 font-size: 16px;
 line-height: 22px;
 width: 187px;
@@ -432,7 +507,7 @@ column-gap: 10px;
 .products-inner{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  gap: 0 5px;
   margin-left: 24px;
   
 }
@@ -440,7 +515,7 @@ column-gap: 10px;
 width: 100%;
 height: 600px;
 border-radius: 12px;
-border: 1px solid rgba(0, 124, 255, 0.20);
+border: 1px solid rgba(5, 121, 245, 0.2);
 background: #FFF;
 }
 .products__item{
@@ -452,7 +527,7 @@ margin-left: 25px;
 .products__item-text{
   color: #000;
 text-align: center;
-font-family: 'Gilroy-Regular';
+font-family: 'Roboto';
 font-size: 16px;
 line-height: 22px; 
 margin-bottom: 18px;
@@ -460,7 +535,7 @@ margin-right: 15px;
 }
 .products__item-info{
 color: #757575;
-font-family: 'Gilroy-Regular';
+font-family: 'Roboto';
 font-size: 14px;
 line-height: 18px; 
 text-align: center;
@@ -479,7 +554,7 @@ font-weight: 400;
 line-height: 24px;
 }
 .products__item-image{
-  margin: 18px 0px 24px 24px;
+  margin: 18px 0 24px 24px;
   cursor: pointer;
 }
 .benefits__title{
@@ -493,10 +568,13 @@ margin-top: 3px;
 margin-bottom: 32px;
 text-decoration: none;
 }
+.products__item-img-info{
+  display: flex;
+}
 
 
 .footer{
-height: 127px;
+height: 173px;
 margin-top: 70px;
 background: rgba(0, 124, 255, 0.05);
 }
@@ -507,7 +585,7 @@ display: flex;
 .logo__img-text{
   color: #000;
   margin-left: 34px;
-  font-family: 'Gilroy-Regular';
+  font-family: 'Roboto';
   font-style: normal;
   }
 .footer__logo-images{
@@ -522,7 +600,7 @@ display: flex;
   margin-top: 36px;
 }
 .footer__menu-line{
-  font-family: 'Gilroy-medium';
+  font-family: 'Roboto';
   color: #000;
   font-size: 16px;
   line-height: 24px;
@@ -532,7 +610,7 @@ display: flex;
 }
 .footer__menu-title{
 color: #000;
-font-family: 'Gilroy-Regular';
+font-family: 'Roboto';
 font-size: 14px;
 line-height: 18.065px;
 text-decoration-line: underline;
@@ -616,7 +694,7 @@ text-decoration: none;
   border-radius: 6px;
   background: #007CFF;
   color: #FFF;
-  font-family: 'Gilroy-Regular';
+  font-family: 'Roboto';
   font-size: 16px;
   line-height: 22px;
   width: 187px;
@@ -632,13 +710,13 @@ text-decoration: none;
   }
   .accordion__content-text{
     color: #000;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 14px;
 line-height: 24px;
   }
 .accordion__content-input{
   color: #000;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 14px;
 line-height: 24px;
 margin-right: 20px;
@@ -686,7 +764,7 @@ margin-left: 28px;
   border-radius: 6px;
 background: #007CFF;
 color: #FFF;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 16px;
 line-height: 24px;
 border: none;
@@ -694,7 +772,7 @@ cursor: pointer;
 }
 .delivery__title-text{
   color: #000;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 18px;
 line-height: 24px;
 margin-left: 15px;
@@ -709,14 +787,14 @@ margin-right: 32px;
 .about__text{
   min-height: 100%;
   color: #000;
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
   font-size: 18px;
   line-height: 24px;
   text-align: start;
 }
 .about__item-text{
   color: #000;
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
   font-size: 18px;
   line-height: 24px;
   text-align: start;
@@ -733,14 +811,14 @@ display: grid;
 }
 .contacts__title{
   color: #000;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 18px;
 line-height: 24px; 
 margin-left: 15px; 
 }
 .contacts__link{
   color: #000;
-font-family: 'Gilroy';
+font-family: 'Roboto';
 font-size: 18px;
 line-height: 24px; 
 margin-top: 10px;
@@ -749,7 +827,7 @@ margin-left: 15px;
 
 .contacts__teme-title{
   color: #000;
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
   font-size: 18px;
   line-height: 24px; 
   margin-top: 20px;
@@ -757,14 +835,14 @@ margin-left: 15px;
 }
 .contacts__teme-text{
   color: #000;
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
   font-size: 18px;
   line-height: 24px;
   margin-left: 36px;
 }
 .contacts__dileveri-item{
   color: #000;
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 30px;
@@ -775,7 +853,7 @@ margin-left: 15px;
 }
 .contacts__dileveri-text{
   color: #000;
-  font-family: 'Gilroy';
+  font-family: 'Roboto';
   font-size: 18px;
   line-height: 24px;
   margin-left: 15px;
